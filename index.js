@@ -15,12 +15,7 @@ app.post('/message', (req, res) => {
     axios.get('https://api.wit.ai/message?q='+req.body['msg'] , { headers: {"Authorization" : `Bearer ${wit_token}`} })
   .then(function (response) {
     // handle success
-    axios.get('https://cloud.youtube.com/?q='+response.data.entities['song:song'][0]['body'], {headers: {'Authroziation': `Bearer ${token}`}})
-    .then(function(resp){
-        res.json(resp);
-    }).catch(function(err){
-        console.log(err);
-    });
+    res.json(response.data);
   })
   .catch(function (error) {
     // handle error
