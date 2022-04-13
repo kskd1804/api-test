@@ -28,4 +28,4 @@ app.post('/message', (req, res) => {
   });
 });
 
-app.listen(80, () => console.log(`Started server at http://localhost:80!`));
+app.listen(4000, () => console.log(`Started server at http://localhost:4000!`));
